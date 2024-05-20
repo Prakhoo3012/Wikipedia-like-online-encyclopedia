@@ -1,0 +1,26 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load entry_extras %}
+
+{% block title %}
+    edit 
+{% endblock %}
+
+<!-- edit page -->
+
+{% block body %}
+    <h5>{{ title }}</h5>
+
+    <form action="{% url 'encyclopedia:editpage' %}" mthod="get">
+        <div class="form-check">
+            <label for="">Select entry you want to edit</label>
+            <select class="form-control" name="title">
+                {% for entry in entries %}
+                    <option>{{ entry }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Edit Entry</button>
+      </form>
+
+{% endblock %}

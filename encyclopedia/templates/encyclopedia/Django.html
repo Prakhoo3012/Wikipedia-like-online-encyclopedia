@@ -1,0 +1,12 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load entry_extras %}
+
+{% block title %}
+    {{ title }}
+{% endblock %}
+
+{% block body %}
+        {{ text|convert_markdwon|safe }}
+        <a href="{% url 'encyclopedia:edit' %}">edit page</a>
+{% endblock %}

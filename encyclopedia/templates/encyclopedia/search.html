@@ -1,0 +1,17 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% block title %}
+    search
+{% endblock %}
+
+{% block body %}
+    <h1>Not found '{{ title }}'</h1>
+    <h2>Do you mean: </h2>
+
+    <ul>
+        {% for Litem in list %}
+            <li><a href="{{ Litem }}">{{ Litem }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}

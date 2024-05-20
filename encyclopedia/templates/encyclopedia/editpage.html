@@ -1,0 +1,23 @@
+{% extends "encyclopedia/layout.html" %}
+
+{% load entry_extras %}
+
+{% block title %}
+    edit | {{ title }}
+{% endblock %}
+
+{% block body %}
+
+    <form action="{% url 'encyclopedia:update_entry' %}" mthod="get">
+        <div class="form-check">
+            <label for="">Selected entry you want to edit</label>
+            <input type="text" name="title" id="" value="{{ title }}">
+        </div>
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Content</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="content">{{ text }}</textarea>
+          </div>
+        <button type="submit" class="btn btn-primary mb-2">Update Entry</button>
+      </form>
+
+{% endblock %}
